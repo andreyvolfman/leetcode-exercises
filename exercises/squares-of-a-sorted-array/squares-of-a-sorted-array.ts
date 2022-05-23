@@ -29,42 +29,23 @@ nums is sorted in non-decreasing order.
 Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?
 */
 
+// O(n)
 export function sortedSquares(nums: number[]): number[] {
-    const negArray = [];
-    const posArray = [];
     const result = [];
+    let p1 = 0;
+    let p2 = nums.length - 1;
 
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] < 0) {
-            negArray.push(nums[i] ** 2);
+    while (p1 <= p2) {
+        if (nums[p1] ** 2 < nums[p2] ** 2) {
+            result.push(nums[p2] ** 2);
+            p2--;
         } else {
-            posArray.push(nums[i] ** 2);
+            result.push(nums[p1] ** 2);
+            p1++;
         }
     }
 
-    if (negArray.length === 0) {
-        return posArray;
-    }
-    if (posArray.length === 0) {
-        return negArray.reverse();
-    }
-
-    let p1 = negArray.length - 1;
-    let p2 = 0;
-    while (result.length < nums.length) {
-        if (negArray[p1] === posArray[p2]) {
-            result.push(negArray[p1]);
-            p1--;
-            result.push(posArray[p2]);
-            p2++;
-        } else if (posArray[p2] === undefined || negArray[p1] < posArray[p2]) {
-            result.push(negArray[p1]);
-            p1--;
-        } else {
-            result.push(posArray[p2]);
-            p2++;
-        }
-    }
+    result.reverse();
 
     return result;
 }
