@@ -5,43 +5,43 @@ describe('twoSum', () => {
         const input = [2, 7, 11, 15];
         const target = 9;
 
-        const ouput = twoSum(input, target);
+        const output = twoSum(input, target);
 
         const expected = [1, 2];
 
-        expect(expected).toEqual(ouput);
+        expect(output).toEqual(expected);
     });
 
     test('should return first and third elenemts position', () => {
         const input = [2, 3, 4];
         const target = 6;
 
-        const ouput = twoSum(input, target);
+        const output = twoSum(input, target);
 
         const expected = [1, 3];
 
-        expect(expected).toEqual(ouput);
+        expect(output).toEqual(expected);
     });
 
     test('should return first and second elenemts position', () => {
         const input = [-1, 0];
         const target = -1;
 
-        const ouput = twoSum(input, target);
+        const output = twoSum(input, target);
 
         const expected = [1, 2];
 
-        expect(expected).toEqual(ouput);
+        expect(output).toEqual(expected);
     });
 
     test('should return first and second elenemts position', () => {
         const input = [5, 25, 75];
         const target = 100;
 
-        const ouput = twoSum(input, target);
+        const output = twoSum(input, target);
 
         const expected = [2, 3];
 
-        expect(expected).toEqual(ouput);
+        expect(output).toEqual(expected);
     });
 });

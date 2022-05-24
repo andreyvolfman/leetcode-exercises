@@ -8,7 +8,7 @@ describe('sortedSquares', () => {
 
         const expected = [0, 1, 9, 16, 100];
 
-        expect(expected).toEqual(output);
+        expect(output).toEqual(expected);
     });
 
     test('should sort array with one negative element', () => {
@@ -18,7 +18,7 @@ describe('sortedSquares', () => {
 
         const expected = [1];
 
-        expect(expected).toEqual(output);
+        expect(output).toEqual(expected);
     });
 
     test('should sort array with two equal elements', () => {
@@ -28,7 +28,7 @@ describe('sortedSquares', () => {
 
         const expected = [0, 0, 25, 49, 99980001, 100000000, 100000000];
 
-        expect(expected).toEqual(output);
+        expect(output).toEqual(expected);
     });
 
     test('should sort array with two elements', () => {
@@ -38,6 +38,6 @@ describe('sortedSquares', () => {
 
         const expected = [0, 4];
 
-        expect(expected).toEqual(output);
+        expect(output).toEqual(expected);
     });
 });

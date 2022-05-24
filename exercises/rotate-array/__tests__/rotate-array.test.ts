@@ -9,7 +9,7 @@ describe('rotate', () => {
 
         const expected = [5, 6, 7, 1, 2, 3, 4];
 
-        expect(expected).toEqual(input);
+        expect(input).toEqual(expected);
     });
 
     test('should rotate two items', () => {
@@ -20,6 +20,6 @@ describe('rotate', () => {
 
         const expected = [3, 99, -1, -100];
 
-        expect(expected).toEqual(input);
+        expect(input).toEqual(expected);
     });
 });
