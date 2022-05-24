@@ -1,6 +1,6 @@
 import { reverseString } from '../reverse-string';
 
-describe('sortedSquares', () => {
+describe('reverseString', () => {
     test('should reverse hello string', () => {
         const input = ['h', 'e', 'l', 'l', 'o'];
 
@@ -8,7 +8,7 @@ describe('sortedSquares', () => {
 
         const expected = ['o', 'l', 'l', 'e', 'h'];
 
-        expect(expected).toEqual(input);
+        expect(input).toEqual(expected);
     });
 
     test('should reverse hello string', () => {
@@ -18,6 +18,6 @@ describe('sortedSquares', () => {
 
         const expected = ['h', 'a', 'n', 'n', 'a', 'H'];
 
-        expect(expected).toEqual(input);
+        expect(input).toEqual(expected);
     });
 });
