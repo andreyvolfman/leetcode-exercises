@@ -1,6 +1,6 @@
-import { promises, open } from 'fs';
-import path from 'path';
-import { exec } from 'child_process';
+const { promises, open } = require('fs');
+const path = require('path');
+const { exec } = require('child_process');
 
 const [, , challengeName] = process.argv;
 
@@ -13,20 +13,24 @@ function getNextIndex() {
         .then((indices) => Math.max(...indices) + 1);
 }
 
-const nextIndex = await getNextIndex();
+async function make() {
+    const nextIndex = await getNextIndex();
 
-const newChallenge = path.resolve(
-    './exercises',
-    `${nextIndex}-${challengeName}`
-);
+    const newChallenge = path.resolve(
+        './exercises',
+        `${nextIndex}-${challengeName}`
+    );
 
-await promises.mkdir(newChallenge);
-await promises.mkdir(path.resolve(newChallenge, '__tests__'));
+    await promises.mkdir(newChallenge);
+    await promises.mkdir(path.resolve(newChallenge, '__tests__'));
 
-await Promise.all([
-    promises.open(path.resolve(newChallenge, `${challengeName}.ts`), 'w'),
-    promises.open(
-        path.resolve(newChallenge, '__tests__', `${challengeName}.test.ts`),
-        'w'
-    ),
-]);
+    await Promise.all([
+        promises.open(path.resolve(newChallenge, `${challengeName}.ts`), 'w'),
+        promises.open(
+            path.resolve(newChallenge, '__tests__', `${challengeName}.test.ts`),
+            'w'
+        ),
+    ]);
+}
+
+make();
