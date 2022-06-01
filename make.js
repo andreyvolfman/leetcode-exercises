@@ -1,10 +1,7 @@
-const { promises, open } = require('fs');
+const { promises } = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
 
 const [, , challengeName] = process.argv;
-
-exec(`git checkout master && git pull && git checkout -b ${challengeName}`);
 
 function getNextIndex() {
     return promises
@@ -18,7 +15,7 @@ async function make() {
 
     const newChallenge = path.resolve(
         './exercises',
-        `${nextIndex}-${challengeName}`
+        `${String(nextIndex).padStart(3, '0')}-${challengeName}`
     );
 
     await promises.mkdir(newChallenge);
